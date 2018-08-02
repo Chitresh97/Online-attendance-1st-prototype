@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="jumbotron">
+
+    <h1>Hello, <%=current_user.email%></h1>
+
+    <button class="btn btn-success"id="present">Mark me present</button>
+    <%@user.classes=0%>
+
+  </div>
+</div>
+
+<script>
+console.log('hello');
+$('#present').click(function(){
+$('.jumbotron').append(<%=@user.classes=@user.classes+1%>);
+$(this).prop('disabled', true);
+
+});
+
+</script>
