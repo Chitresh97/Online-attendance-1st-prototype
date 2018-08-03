@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_02_033021) do
+ActiveRecord::Schema.define(version: 2018_08_03_084043) do
 
-  create_table "batches", force: :cascade do |t|
-    t.string "name"
+  create_table "periods", force: :cascade do |t|
+    t.date "class_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "batchs", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "periods_users", id: false, force: :cascade do |t|
+    t.integer "period_id", null: false
+    t.integer "user_id", null: false
+    t.index ["period_id"], name: "index_periods_users_on_period_id"
+    t.index ["user_id"], name: "index_periods_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

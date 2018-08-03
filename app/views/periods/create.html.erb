@@ -1,0 +1,9 @@
+<%= form_for @period do |f| %>
+
+<div class="form-group col md-6">
+  <label for="date">Date</label>
+  <%=f.date_field :class_date, placeholder: "Enter the date of class" ,required: "required", class: "form-control here", id:"date"%>
+
+</div>
+<%= f.submit "Add" %>
+<%end%>
