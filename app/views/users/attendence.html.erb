@@ -1,7 +1,8 @@
 <h1>Hello, <%=current_user.email%></h1>
 
   <%for p in @periods%>
-    <%if Time.now.strftime("%Y-%m-%d")==p.class_date.strftime("%Y-%m-%d")%>
+    <%if Time.now.strftime("%Y-%m-%d")==prails s
+    .class_date.strftime("%Y-%m-%d")%>
       <button class="btn btn-success"id="present">Mark me present</button>
       <%end%>
       <%end%>

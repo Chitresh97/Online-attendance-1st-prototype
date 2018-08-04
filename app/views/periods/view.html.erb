@@ -1,3 +1,17 @@
-<% @period.each do |period| %>
-  <%=period.class_date%><br />
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Class Dates</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @period.each do |period| %>
+      <tr>
+        <td><%=period.class_date.strftime("%d-%m-%Y")%></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
