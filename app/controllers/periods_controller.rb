@@ -7,4 +7,7 @@ class PeriodsController < ApplicationController
 
     redirect_to action:"create"
   end
+  def view
+    @period=Period.order(:class_date)
+  end
 end

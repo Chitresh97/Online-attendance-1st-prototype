@@ -1,3 +1,6 @@
+Today: <%=Time.now.strftime("%d/%m/%Y")%>
+
+
 <%= form_for @period do |f| %>
 
 <div class="form-group col md-6">
@@ -5,5 +8,7 @@
   <%=f.date_field :class_date, placeholder: "Enter the date of class" ,required: "required", class: "form-control here", id:"date"%>
 
 </div>
-<%= f.submit "Add" %>
+<button name="submit" type="submit" class="btn btn-success">Add</button>
+
+<%= link_to '<button class="btn btn-primary">View classes</button>'.html_safe, periods_view_path%>
 <%end%>

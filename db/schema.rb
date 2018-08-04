@@ -12,6 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2018_08_03_084043) do
 
+  create_table "batches", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "batchs", force: :cascade do |t|
+    t.string "batch_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "periods", force: :cascade do |t|
     t.date "class_date"
     t.datetime "created_at", null: false

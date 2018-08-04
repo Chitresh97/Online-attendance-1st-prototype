@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  post 'periods/new',to:'periods#new'
-  get 'periods/create', to: 'periods#create',as: :periods
+  get 'periods', to: 'periods#create',as: :periods
+  post 'periods',to:'periods#new', as: :periods_new
+  get 'periods/view', to:'periods#view', as: :periods_view
+
   get 'users/attendence'
   root 'users#attendence'
   devise_for :users
