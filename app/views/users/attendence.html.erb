@@ -1,21 +1,21 @@
-<h1>Hello, <%=current_user.email%></h1>
-
-  <%for p in @periods%>
-    <%if Time.now.strftime("%Y-%m-%d")==p.class_date.strftime("%Y-%m-%d")%>
-      <button class="btn btn-success"id="present">Mark me present</button>
-      
-      <%end%>
-      <%end%>
-      <button class="btn btn-info"id="present">View my attendance record</button>
-    <!-- <%@user.classes=0%> -->
+<h1>Hello,
+  <%=current_user.email%></h1>
 
 
-<script>
-console.log('hello');
-$('#present').click(function(){
+  <%if @periods.include? @today%>
+    <button class="btn btn-success" id="present">Mark me present</button>
+    <%else%>
+    <button disabled class="btn btn-success" id="present">Mark me present</button>
+    <%end%>
 
-$(this).prop('disabled', true);
+  <button class="btn btn-info" id="present">View my attendance record</button>
+  <!-- <%@user.classes=0%> -->
 
-});
+  <script>
+    console.log('Script running');
+    $('#present').click(function () {
 
-</script>
+      $(this).prop('disabled', true);
+
+    });
+  </script>
