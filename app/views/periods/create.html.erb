@@ -1,3 +1,21 @@
+<div id="teacher-auth-info-links">
+  <%if teacher_signed_in?%>
+
+    <p>
+      <%=link_to "Sign Out", destroy_teacher_session_path, method: :delete%>
+    </p>
+  <%else%>
+    <p>
+      <%=link_to "Sign In", new_teacher_session_path%>
+    </p>
+    <p>
+      <%=link_to "Sign Up", new_teacher_registration_path%>
+    </p>
+
+  <%end%>
+
+</div>
+
 Today: <%=Time.now.strftime("%d/%m/%Y")%>
 
 
@@ -10,5 +28,5 @@ Today: <%=Time.now.strftime("%d/%m/%Y")%>
 </div>
 <button name="submit" type="submit" class="btn btn-success">Add</button>
 
-<%= link_to '<button class="btn btn-primary">View classes</button>'.html_safe, periods_view_path%>
+<%= link_to '<button class="btn btn-primary">View classes</button>'.html_safe, teachers_root_path%>
 <%end%>
